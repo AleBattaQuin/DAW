@@ -1,4 +1,5 @@
 <?php
+
 //Crear o definir una clase
 class Coche{
 
