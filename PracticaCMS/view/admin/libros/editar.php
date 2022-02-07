@@ -17,8 +17,8 @@
                     <label for="titulo">Título</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="autor" type="text" name="autor" value="<?php echo $datos->autor ?>">
-                    <label for="autor">Autor</label>
+                    <input id="paginaWeb" type="text" name="paginaWeb" value="<?php echo $datos->paginaWeb ?>">
+                    <label for="paginaWeb">URL</label>
                 </div>
                 <div class="input-field col s12">
                     <?php $fecha = ($datos->fecha) ? date("d-m-Y", strtotime($datos->fecha)) : date("d-m-Y") ?>
