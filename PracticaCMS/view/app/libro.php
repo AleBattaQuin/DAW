@@ -17,7 +17,7 @@
                     <br>
                     <p>
                         <strong>Fecha</strong>: <?php echo date("d/m/Y", strtotime($datos->fecha)) ?><br>
-                        <strong>Página Web</strong>: <a href="<?php echo $datos->paginaWeb ?>"><?php echo $datos->paginaWeb ?></a>
+                        <strong>Página Web</strong>: <a href="<?php echo $datos->paginaWeb ?>" target="_blank"> <?php echo $datos->paginaWeb ?> </a>
                     </p>
                 </div>
             </div>
