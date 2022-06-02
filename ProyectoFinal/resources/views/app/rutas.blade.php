@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <br><br><br>
     @foreach ($rowset as $row)
 
     <div class="row g-0 bg-light position-relative">
@@ -14,7 +14,6 @@
             <br>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">DURACIÓN: {{ $row->duracion  }}</li>
-                <li class="list-group-item">DISTANCIA: {{ $row->distancia  }}</li>
                 <li class="list-group-item">PUERTO: {{ $row->puerto  }}</li>
                 <li class="list-group-item">PROVINCIA: {{ $row->provincia  }}</li>
             </ul>

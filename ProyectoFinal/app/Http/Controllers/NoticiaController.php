@@ -7,6 +7,7 @@ use App\Models\Noticia;
 use App\Http\Requests\NoticiaRequest;
 use App\Helpers\Funciones;
 
+
 class NoticiaController extends Controller
 {
     public function __construct()
@@ -22,10 +23,13 @@ class NoticiaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        //Página a mostrar
+        $pagina = ($request->pagina) ? $request->pagina : 1;
+
         //Obtengo todas las noticias ordenadas por fecha más reciente
-        $rowset = Noticia::orderBy("fecha","DESC")->get();
+        $rowset = Noticia::orderBy("fecha","DESC")->paginate(2,['*'],'pagina',$pagina);
 
         return view('admin.noticias.index',[
             'rowset' => $rowset,

@@ -1,14 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <br><br><br>
     <div class="row">
-
-        @foreach ($rowset as $row)
 
             <img src="{{'img/'.$row->imagen}}" width="500px" alt="{{'img/'.$row->titulo}}" class="center">
 
-            <br><br>
+            <br><br><br><br><br>
 
             <p class="parrafos">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -19,7 +17,7 @@
             </p>
 
             <br><br>
-        @endforeach
+
 
     </div>
 

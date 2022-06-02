@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <br><br><br>
     @foreach ($rowset as $row)
 
         <div class="row g-0 bg-light position-relative">

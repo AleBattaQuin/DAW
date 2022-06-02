@@ -32,7 +32,7 @@
 
         <!--LOGO-->
         <div class="col align-self-center">
-            <a href="{{ route('home') }}"><img src="encabezado.jpg" alt="logo" width="400px" class="mx-auto d-block"></a>
+            <a href="{{ route('home') }}"><img src="./public/img/logo.jpg" alt="logo" width="400px" class="mx-auto d-block"></a>
         </div>
         <br>
         <!--MENU DE NAVEGACION-->
@@ -92,11 +92,11 @@
             <br><br>
 
             <a href="https://twitter.com/batta612" target="_blank">
-                <img src="Twitter-logo.svg.png" alt="logo-twitter" width="60px">
+                <img src="../ProyectoFinal/public/img/Twitter-logo.svg.png" alt="logo-twitter" width="60px">
             </a>
             <br>
             <a href="https://www.instagram.com/mountain__route_/?hl=es"  target="_blank">
-                <img src="logo-insta.png" alt="logo-instagram" width="60px">
+                <img src="../ProyectoFinal/public/img/logo-insta.png" alt="logo-instagram" width="60px">
             </a>
             <br>
         </div>

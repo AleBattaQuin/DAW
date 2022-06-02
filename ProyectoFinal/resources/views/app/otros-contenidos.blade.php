@@ -2,17 +2,14 @@
 
 @section('content')
 
-    <h3>
-        <a href="{{ route('home') }}" title="Inicio">Inicio</a> <span>| Acerca de</span>
-    </h3>
+    <br><br><br>
     <div class="row">
         <i class="large material-icons">info_outline</i>
         <p>
             Esta página muestra noticias relacionadas con el universo de Harry Potter.
         </p>
         <p>
-            Está desarrollada en PHP con Programación orientada a Objetos, siguiendo el patrón Modelo Vista Controlador y
-            utiliza MySQL para la persistencia de datos.
+            Hola mi amor por qué no me van las fotos??
         </p>
     </div>
 

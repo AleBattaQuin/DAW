@@ -57,7 +57,7 @@ class AppController extends Controller
     public function ruta($slug)
     {
         //Obtengo la ruta o muestro error
-        $row = Ruta::where('activo', 1)->lwhere('slug', $slug)->firstOrFail();
+        $row = Ruta::where('activo', 1)->where('slug', $slug)->firstOrFail();
 
         return view('app.ruta',[
             'row' => $row,

@@ -22,7 +22,7 @@
 
             <div style="text-align: center;" >
 
-                <a href="{{ url('ruta/Puerto de la Fuenfría') }}"><button type="button" class="btn btn-lg" id="boton">PENSAR</button></a>
+                <a href="{{ url('ruta/puerto de la fuenfría') }}"><button type="button" class="btn btn-lg" id="boton">PENSAR</button></a>
                 <a href="{{ url('ruta/Puerto de la Fuenfría') }}"><button type="button" class="btn btn-lg" id="boton">PENSAR</button></a>
                 <a href="{{ url('ruta/Puerto de la Fuenfría') }}"><button type="button" class="btn btn-lg" id="boton">PENSAR</button></a>
 
@@ -57,7 +57,7 @@
                 <div class="carousel-inner">
                     @foreach ($rowset as $row)
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{'img/'.$row->imagen}}" width="300px" alt="{{ $row->slug  }}">
+                        <img class="d-block w-100" src="{{ 'img/'.$row->imagen }}" width="300px" alt="{{ $row->slug }}">
                     </div>
                     @endforeach
                 </div>
