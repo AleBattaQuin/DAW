@@ -7,6 +7,7 @@ use App\Models\Ruta;
 use App\Http\Requests\RutaRequest;
 use App\Helpers\Funciones;
 
+
 class RutaController extends Controller
 {
     public function __construct()
@@ -22,8 +23,11 @@ class RutaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        //Página a mostrar
+        $pagina = ($request->pagina) ? $request->pagina : 1;
+
         //Obtengo todas las rutas ordenadas por fecha más reciente
         $rowset = Ruta::orderBy("duracion","DESC")->get();
 
@@ -48,22 +52,6 @@ class RutaController extends Controller
     }
 
     /**
-     * Mostrar el formulario para editar un elemento
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function editar($id)
-    {
-        //Obtengo la ruta o muestro error
-        $row = Ruta::where('id', $id)->firstOrFail();
-
-        return view('admin.rutas.editar',[
-            'row' => $row,
-        ]);
-    }
-
-    /**
      * Guardar un nuevo elemento en la bbdd
      *
      * @param  \App\Http\Requests\RutaRequest  $request
@@ -74,7 +62,8 @@ class RutaController extends Controller
         $row = Ruta::create([
             'puerto' => $request->puerto,
             'duracion' => $request->duracion,
-            'nombre' => Funciones::getSlug($request->nombre),
+            'slug' => Funciones::getSlug($request->nombre),
+            'nombre' => $request->nombre,
             'provincia' => $request->provincia,
             'descripcion' => $request->descripcion,
             'mapa' => $request->mapa,
@@ -96,20 +85,38 @@ class RutaController extends Controller
     }
 
     /**
+     * Mostrar el formulario para editar un elemento
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function editar($id)
+    {
+        //Obtengo la ruta o muestro error
+        $row = Ruta::where('id', $id)->firstOrFail();
+
+        return view('admin.rutas.editar',[
+            'row' => $row,
+        ]);
+    }
+
+
+    /**
      * Actualizar un elemento en la bbdd
      *
      * @param  \App\Http\Requests\RutaRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function actualizar(RutaRequeste $request, $id)
+    public function actualizar(RutaRequest $request, $id)
     {
         $row = Ruta::findOrFail($id);
 
         Ruta::where('id', $row->id)->update([
             'puerto' => $request->puerto,
             'duracion' => $request->duracion,
-            'nombre' => Funciones::getSlug($request->nombre),
+            'slug' => Funciones::getSlug($request->nombre),
+            'nombre' => $request->nombre,
             'provincia' => $request->provincia,
             'descripcion' => $request->descripcion,
             'mapa' => $request->mapa,

@@ -13,7 +13,7 @@
 
         <!--DCH RUTAS-->
         <div class="col-4" id="fondo" style="border-left: 0px;">
-
+            <br>
             <p style="text-align: center;" class="nos">RUTAS RECOMENDADAS</p>
 
             <div style="text-align: center;" >
@@ -46,21 +46,16 @@
 
         <!-- IZQUIERDA -------------------------------------->
 
-        <div class="col-4" id="fondo">
-
+        <div class="col-4" id="fondo" style="margin-left: 150px;">
+            <br>
             <button type="button" class="btn btn-lg" id="boton">GALERIA</button>
 
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                @foreach ($rowset as $row)
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{ asset('img/'.$row->imagen) }}" width="300px" alt="{{ $row->slug }}">
-                    </div>
+                @foreach ($rowset as $row)
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{ asset('img/'.$row->imagen) }}" width="300px" alt="{{ $row->nombre }}">
+                        </div>
                 @endforeach
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -72,17 +67,17 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-
+            <br>
         </div>
+
         <!-- DERECHA -------------------------------------->
 
-        @foreach ($rowset as $row)
-
-        <div class="col-4" id="fondo">
-
+        <div class="col-4 overflow-auto" id="fondo">
+            <br>
             <a href="{{ route('noticias') }}" style="text-align: center;"><button type="button" class="btn btn-lg" id="boton">NOTICIAS</button></a>
-
+            <br><br>
             <div>
+                @foreach ($rowset as $row)
                 <div class="row g-0 bg-light position-relative" id="fondo-noticia">
                     <div class="col-md-6 mb-md-0 p-md-4">
                         <img class="d-block w-100" src="{{ asset('img/'.$row->img) }}" width="300px" alt="{{ $row->slug }}">
@@ -96,10 +91,11 @@
                         <a href="{{ url('noticia/'.$row->slug) }}" class="stretched-link">Saber más</a>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
 
-        @endforeach
+
 
     </div>
 

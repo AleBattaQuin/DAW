@@ -61,11 +61,13 @@ class NoticiaController extends Controller
     {
         $row = Noticia::create([
             'titulo' => $request->titulo,
-            'entradilla' => $request->entradilla,
             'slug' => Funciones::getSlug($request->titulo),
-            'texto' => $request->texto,
+            'entradilla' => $request->entradilla,
             'fecha' => \DateTime::createFromFormat("d-m-Y", $request->fecha)->format("Y-m-d H:i:s"),
             'autor' => $request->autor,
+            'texto' => $request->texto,
+            'img' => $request->img,
+
         ]);
 
         //Imagen

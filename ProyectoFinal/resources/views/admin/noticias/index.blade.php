@@ -2,7 +2,7 @@
 
 @section('content')
     <br><br><br>
-    <h3 style="font-family: Ubuntu">NOTICIAS:</h3>
+    <h3 style="font-family: Ubuntu; font-weight: bold;">NOTICIAS:</h3>
     <div class="row">
         <!--Nuevo-->
         <article class="col s12 l6">

@@ -5,6 +5,8 @@
 
     <br><br><br>
 
-    Aqui hay que poner algo pero no se que poner muy bien jeje
+    <h2>Bienvenido {{Auth::user()->nombre}} </h2>
+
+    <p>Este es el <strong>Panel de Administración</strong></p>
 
 @endsection

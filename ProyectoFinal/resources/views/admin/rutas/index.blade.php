@@ -1,10 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-
-    <h3>
-        <a href="{{ route("admin") }}" title="Inicio">Inicio</a> <span>| rutas</span>
-    </h3>
+    <br><br><br>
+    <h3 style="font-family: Ubuntu">RUTAS:</h3>
     <div class="row">
         <!--Nuevo-->
         <article class="col s12 l6">
@@ -18,7 +16,7 @@
                     </div>
                     <div class="card-action">
                         <a href="{{ url("admin/rutas/crear") }}" title="Añadir nueva ruta">
-                            <i class="material-icons">add_circle</i>
+                            <button type="button" class="btn btn-lg" id="boton">Nueva ruta</button>
                         </a>
                     </div>
                 </div>
@@ -30,7 +28,7 @@
                     <div class="card-stacked">
                         @if ($row->imagen)
                             <div class="card-image">
-                                {{ Html::image('img/'.$row->imagen, $row->nombre) }}
+                                <img class="d-block w-100" src="{{ asset('img/'.$row->imagen) }}" width="300px" alt="{{ $row->slug }}">
                             </div>
                         @endif
                         <div class="card-content">
@@ -45,20 +43,20 @@
                         </div>
                         <div class="card-action">
                             <a href="{{ url("admin/rutas/editar/".$row->id) }}" title="Editar">
-                                <i class="material-icons">edit</i>
+                                <button type="button" class="btn btn-lg" id="boton">Editar</button>
                             </a>
-                            <a href="{{ url("admin/rutas/activar/".$row->id) }}" title="{{ Vistas::nombre($row->activo) }}">
-                                <i class="{{ Vistas::color($row->activo) }} material-icons">{{ Vistas::icono($row->activo) }}</i>
+                            <a href="{{ url("admin/rutas/activar/".$row->id) }}" title="{{ Vistas::titulo($row->activo) }}">
+                                <button type="button" class="btn btn-lg {{ Vistas::color($row->activo) }}" id="boton">{{ Vistas::icono($row->activo) }}</button>
                             </a>
                             @php
                                 $title = ($row->home == 1) ? "Quitar de la home" : "Mostrar en la home";
                                 $color = ($row->home == 1) ? "green-text" : "red-text";
                             @endphp
                             <a href="{{ url("admin/rutas/home/".$row->id) }}" title="{{ $title }}">
-                                <i class="{{ $color }} material-icons">home</i>
+                                <button type="button" class="btn btn-lg {{ $color }}" id="boton">inicio</button>
                             </a>
                             <a href="#" class="activator" title="Borrar">
-                                <i class="material-icons">delete</i>
+                                <button type="button" class="btn btn-lg" id="boton">Borrar</button>
                             </a>
                         </div>
                     </div>
@@ -70,9 +68,7 @@
                             Esta acción no se puede deshacer.
                         </p>
                         <a href="{{ url("admin/rutas/borrar/".$row->id) }}" title="Borrar">
-                            <button class="btn waves-effect waves-light" type="button">Borrar
-                                <i class="material-icons right">delete</i>
-                            </button>
+                            <button class="btn waves-effect waves-light" type="button">Borrar</button>
                         </a>
                     </div>
                 </div>

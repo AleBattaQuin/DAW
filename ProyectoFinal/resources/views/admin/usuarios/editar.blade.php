@@ -2,13 +2,14 @@
 
 @section('content')
 
-    <h3>
-        <a href="{{ route("admin") }}" title="Inicio">Inicio</a> <span>| </span>
-        <a href="{{ url("admin/usuarios") }}" title="Usuarios">Usuarios</a> <span>| </span>
+    <br><br><br>
+
+    <h3 style="font-family: Ubuntu; font-weight: bold;">
+        USUARIO:
         @if ($row->id)
-            <span>Editar {{ $row->nombre }}</span>
+            <span>Editar {{ $row->titulo }}</span>
         @else
-            <span>Nuevo usuario</span>
+            <span>Nueva usuario</span>
         @endif
     </h3>
     <div class="row">
@@ -17,12 +18,13 @@
             @csrf
             <div class="row">
                 <div class="input-field col s12">
+                    <label for="nombre">Nombre</label><br>
                     <input id="nombre" type="text" name="nombre" value="{{ $row->nombre }}">
-                    <label for="nombre">Nombre</label>
                 </div>
                 <div class="input-field col s12">
+                    <label for="email">E-mail</label><br>
                     <input id="email" type="text" name="email" value="{{ $row->email }}">
-                    <label for="email">E-mail</label>
+
                 </div>
                 @php $clase = ($row->id) ? "hide" : "" @endphp
                 <div class="input-field col s12 {{ $clase }}" id="password">
@@ -43,6 +45,12 @@
             <div class="row">
                 <p>Permisos</p>
                 <p>
+                    <label for="rutas">
+                        <input id="rutas" name="rutas" type="checkbox" {{ ($row->rutas == 1) ? "checked" : "" }}>
+                        <span>Rutas</span>
+                    </label>
+                </p>
+                <p>
                     <label for="noticias">
                         <input id="noticias" name="noticias" type="checkbox" {{ ($row->noticias == 1) ? "checked" : "" }}>
                         <span>Noticias</span>
@@ -56,13 +64,9 @@
                 </p>
                 <div class="input-field col s12">
                     <a href="{{ url("admin/usuarios") }}" title="Volver">
-                        <button class="btn waves-effect waves-light" type="button">Volver
-                            <i class="material-icons right">replay</i>
-                        </button>
+                        <button type="button" class="btn btn-lg" id="boton">Volver</button>
                     </a>
-                    <button class="btn waves-effect waves-light" type="submit" name="guardar">Guardar
-                        <i class="material-icons right">save</i>
-                    </button>
+                    <button type="submit" name="guardar" class="btn btn-lg" id="boton">Guardar</button>
                 </div>
             </div>
         </form>

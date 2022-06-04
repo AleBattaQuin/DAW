@@ -34,7 +34,7 @@
         <div class="col" style="background-color: #FEFAE0;"></div>
         <!--LOGO-->
         <div class="col align-self-center">
-            <a href="{{ route('home') }}" style="background-color: #FEFAE0;"><img src="{{ asset('img/logo.jpg') }}" alt="logo" width="400px" class="mx-auto d-block"></a>
+            <a href="{{ route('home') }}" style="background-img: #FEFAE0;"><img src="{{ asset('img/logo.jpg') }}" alt="logo" width="400px" class="mx-auto d-block"></a>
         </div>
 
         <div class="col" style="background-color: #FEFAE0;"></div>
@@ -57,7 +57,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" id="boton" href="{{ route('otros-contenidos') }}">OTROS CONTENIDOS</a>
+                    <!--<a class="nav-link" id="boton" href="{{ route('otros-contenidos') }}">OTROS CONTENIDOS</a>-->
                 </li>
 
                 <li class="nav-item">

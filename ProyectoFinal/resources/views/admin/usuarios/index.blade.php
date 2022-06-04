@@ -2,9 +2,8 @@
 
 @section('content')
 
-    <h3>
-        <a href="{{ route("admin") }}" title="Inicio">Inicio</a> <span>| Usuarios</span>
-    </h3>
+    <br><br><br>
+    <h3 style="font-family: Ubuntu; font-weight: bold;">USUARIOS:</h3>
     <div class="row">
         <!--Nuevo-->
         <article class="col s12 l6">
@@ -34,22 +33,24 @@
                                 {{ $row->nombre }}
                             </h4>
                             <strong>Usuarios: </strong>{{ ($row->usuarios) ? "Sí" : "No" }}<br>
-                            <strong>Noticias: </strong>{{ ($row->noticias) ? "Sí" : "No" }}
+                            <strong>Noticias: </strong>{{ ($row->noticias) ? "Sí" : "No" }}<br>
+                            <strong>Rutas: </strong>{{ ($row->rutas) ? "Sí" : "No" }}
                         </div>
                         <div class="card-action">
                             <a href="{{ url("admin/usuarios/editar/".$row->id) }}" title="Editar">
-                                <i class="material-icons">edit</i>
+                                <button type="button" class="btn btn-lg" id="boton">Editar</button>
                             </a>
                             @php
                                 $title = ($row->activo == 1) ? "Desactivar" : "Activar";
                                 $color = ($row->activo == 1) ? "green-text" : "red-text";
                                 $icono = ($row->activo == 1) ? "mood" : "mood_bad";
                             @endphp
+
                             <a href="{{ url("admin/usuarios/activar/".$row->id) }}" title="{{ $title }}">
-                                <i class="{{ $color }} material-icons">{{ $icono }}</i>
+                                <button type="button" class="btn btn-lg {{ $color }}" id="boton">{{ $icono }}</button>
                             </a>
                             <a href="#" class="activator" title="Borrar">
-                                <i class="material-icons">delete</i>
+                                <button type="button" class="btn btn-lg" id="boton">Borrar</button>
                             </a>
                         </div>
                     </div>
@@ -61,9 +62,7 @@
                             Esta acción no se puede deshacer.
                         </p>
                         <a href="{{ url("admin/usuarios/borrar/".$row->id) }}" title="Borrar">
-                            <button class="btn waves-effect waves-light" type="button">Borrar
-                                <i class="material-icons right">delete</i>
-                            </button>
+                            <button type="button" class="btn btn-lg" id="boton">Borrar</button>
                         </a>
                     </div>
                 </div>

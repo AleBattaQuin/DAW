@@ -16,6 +16,6 @@ class Noticia extends Model
      */
 
     protected $fillable = [
-        'titulo', 'slug', 'entradilla', 'texto', 'fecha', 'autor', 'imagen'
+        'titulo', 'slug', 'entradilla', 'texto', 'fecha', 'autor', 'img',
     ];
 }

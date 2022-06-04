@@ -55,7 +55,6 @@
                         <a class="nav-link" id="boton" href="{{ url('admin/noticias') }}">NOTICIAS</a>
                     </li>
                     @endif
-
                     <li class="nav-item">
                         <a class="nav-link" id="boton" href="{{ url('admin/usuarios') }}">USUARIOS</a>
                     </li>
@@ -91,7 +90,7 @@
         </section>
     </main>
 
-    <footer class="center-align">
+    <footer class="row align-items-end">
         <!--FOOTER------------------------------------------------>
 
         <div class="row borde" id="fondo">
