@@ -31,9 +31,13 @@
     <div class="row justify-content-center">
 
         <!--LOGO-->
+        <div class="col" style="background-color: #FEFAE0;"></div>
+        <!--LOGO-->
         <div class="col align-self-center">
-            <a href="{{ route('home') }}"><img src="./public/img/logo.jpg" alt="logo" width="400px" class="mx-auto d-block"></a>
+            <a href="{{ route('home') }}" style="background-color: #FEFAE0;"><img src="{{ asset('img/logo.jpg') }}" alt="logo" width="400px" class="mx-auto d-block"></a>
         </div>
+
+        <div class="col" style="background-color: #FEFAE0;"></div>
         <br>
         <!--MENU DE NAVEGACION-->
         <div>
@@ -57,12 +61,12 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" id="boton" href="{{ route('admin') }}">INICIO SESIÓN</a>
+                    <a class="nav-link" id="boton" target="_blank" href="{{ route('admin') }}">INICIO SESIÓN</a>
                 </li>
 
             </ul>
 
-            <br><br>
+
 
         </div>
 
@@ -89,14 +93,14 @@
     <div class="row borde" id="fondo">
 
         <div class="col al">
-            <br><br>
+
 
             <a href="https://twitter.com/batta612" target="_blank">
-                <img src="../ProyectoFinal/public/img/Twitter-logo.svg.png" alt="logo-twitter" width="60px">
+                <img src="{{ asset('img/Twitter-logo.svg.png') }}" alt="logo-twitter" width="60px">
             </a>
             <br>
             <a href="https://www.instagram.com/mountain__route_/?hl=es"  target="_blank">
-                <img src="../ProyectoFinal/public/img/logo-insta.png" alt="logo-instagram" width="60px">
+                <img src="{{ asset('img/logo-insta.png') }}" alt="logo-instagram" width="60px">
             </a>
             <br>
         </div>

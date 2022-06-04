@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <br><br><br>
+    <br><br><br><br>
 
 <div class="row">
 <div>
-        <img src="{{'img/'.$row->imagen}}" width="500px" alt="{{'img/'.$row->nombre}}" class="center">
+        <img src="{{ asset('img/'.$row->imagen) }}" width="500px" alt="{{'img/'.$row->nombre}}" class="center">
 </div>
         <br><br>
         <div class="col-4">

@@ -1,4 +1,3 @@
-
 @if (session('success'))
     <input type="hidden" name="tipo-mensaje" value="green">
     <input type="hidden" name="texto-mensaje" value="{!! session('success') !!}">

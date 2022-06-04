@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <br><br><br>
+    <br><br><br><br>
     @foreach ($rowset as $row)
 
     <div class="row g-0 bg-light position-relative">
         <div class="col-md-6 mb-md-0 p-md-4" id="boton" style="border-right: 0px">
-            <img src="{{'img/'.$row->imagen}}" class="w-75 mx-auto d-block" alt="{{'img/'.$row->slug}}">
+            <img src="{{ asset('img/'.$row->imagen) }}" class="w-50 mx-auto d-block" width="100px" alt="{{'img/'.$row->slug}}">
         </div>
         <div class="col-md-6 p-4 ps-md-0" id="boton" style="border-left: 0px">
             <br>

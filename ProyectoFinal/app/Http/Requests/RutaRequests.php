@@ -30,9 +30,9 @@ class RutaRequest extends FormRequest
         //Slug máximo 36 caracteres (no requerido porque se generaría solo)
         //Entradilla máximo 128 caracteres (no requerida)
         $rules = [
-            'titulo' => 'required|max:32',
-            'slug' => 'max:36',
-            'entradilla' => 'max:128',
+            'nombre' => 'required|max:200',
+            'slug' => 'max:200',
+            'descripcion' => 'max:1000',
         ];
 
         return $rules;

@@ -8,6 +8,10 @@ class Vistas
         return ($activo == 1) ? "Desactivar" : "Activar";
     }
 
+    public static function nombre($activo){
+        return ($activo == 1) ? "Desactivar" : "Activar";
+    }
+
     public static function color($activo){
         return ($activo == 1) ? "green-text" : "red-text";
     }

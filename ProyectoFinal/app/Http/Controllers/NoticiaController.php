@@ -69,11 +69,11 @@ class NoticiaController extends Controller
         ]);
 
         //Imagen
-        if ($request->hasFile('imagen')) {
-            $archivo = $request->file('imagen');
+        if ($request->hasFile('img')) {
+            $archivo = $request->file('img');
             $nombre = $archivo->getClientOriginalExtension();
             $archivo->move(public_path()."/img/", $nombre);
-            Noticia::where('id', $row->id)->update(['imagen' => $nombre]);
+            Noticia::where('id', $row->id)->update(['img' => $nombre]);
             $texto = " e imagen subida.";
         }
         else{
@@ -112,19 +112,21 @@ class NoticiaController extends Controller
 
         Noticia::where('id', $row->id)->update([
             'titulo' => $request->titulo,
-            'entradilla' => $request->entradilla,
             'slug' => Funciones::getSlug($request->titulo),
-            'texto' => $request->texto,
+            'entradilla' => $request->entradilla,
             'fecha' => \DateTime::createFromFormat("d-m-Y", $request->fecha)->format("Y-m-d H:i:s"),
             'autor' => $request->autor,
+            'img' => $request->img,
+            'texto' => $request->texto,
+
         ]);
 
         //Imagen
-        if ($request->hasFile('imagen')) {
-            $archivo = $request->file('imagen');
+        if ($request->hasFile('img')) {
+            $archivo = $request->file('img');
             $nombre = $archivo->getClientOriginalExtension();
             $archivo->move(public_path()."/img/", $nombre);
-            Noticia::where('id', $row->id)->update(['imagen' => $nombre]);
+            Noticia::where('id', $row->id)->update(['img' => $nombre]);
             $texto = " e imagen subida.";
         }
         else{
@@ -181,9 +183,9 @@ class NoticiaController extends Controller
         Noticia::destroy($row->id);
 
         //Borrar imagen
-        $imagen = public_path()."/img/".$row->imagen;
-        if (file_exists($imagen)){
-            unlink($imagen);
+        $img = public_path()."/img/".$row->img;
+        if (file_exists($img)){
+            unlink($img);
         }
 
         return redirect('admin/noticias')->with('success', 'Noticia <strong>'.$row->titulo.'</strong> borrada.');

@@ -9,7 +9,7 @@
             Esta página muestra noticias relacionadas con el universo de Harry Potter.
         </p>
         <p>
-            Hola mi amor por qué no me van las fotos??
+            j
         </p>
     </div>
 

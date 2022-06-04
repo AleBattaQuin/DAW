@@ -40,8 +40,13 @@
                             <a href="{{ url("admin/usuarios/editar/".$row->id) }}" title="Editar">
                                 <i class="material-icons">edit</i>
                             </a>
-                            <a href="{{ url("admin/usuarios/activar/".$row->id) }}" title="{{ Vistas::titulo($row->activo) }}">
-                                <i class="{{ Vistas::color($row->activo) }} material-icons">{{ Vistas::icono($row->activo) }}</i>
+                            @php
+                                $title = ($row->activo == 1) ? "Desactivar" : "Activar";
+                                $color = ($row->activo == 1) ? "green-text" : "red-text";
+                                $icono = ($row->activo == 1) ? "mood" : "mood_bad";
+                            @endphp
+                            <a href="{{ url("admin/usuarios/activar/".$row->id) }}" title="{{ $title }}">
+                                <i class="{{ $color }} material-icons">{{ $icono }}</i>
                             </a>
                             <a href="#" class="activator" title="Borrar">
                                 <i class="material-icons">delete</i>

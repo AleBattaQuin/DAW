@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <br><br><br>
+    <br><br><br><br>
     <div class="row">
 
-            <img src="{{'img/'.$row->imagen}}" width="500px" alt="{{'img/'.$row->titulo}}" class="center">
+            <img src="{{ asset('img/'.$row->img) }}" width="500px" alt="{{'img/'.$row->titulo}}" class="center">
 
             <br><br><br><br><br>
 
