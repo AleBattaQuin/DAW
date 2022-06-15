@@ -10,7 +10,8 @@
         <!--DESCRIPCIÓN-->
 
         <div class="row">
-
+<h1 style="font-family: Ubuntu; text-align: center">{{ $row->nombre  }}</h1>
+            <br><br><br>
             <h3 style="font-family: Ubuntu">Descripción de la ruta:</h3>
 
             <div class="col-8">

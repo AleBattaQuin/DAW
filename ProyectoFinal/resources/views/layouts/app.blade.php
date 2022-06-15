@@ -28,16 +28,15 @@
 <nav>
     <!-- HEADER ---------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="background-color:#FEFAE0 ">
 
-        <!--LOGO-->
-        <div class="col" style="background-color: #FEFAE0;"></div>
+
         <!--LOGO-->
         <div class="col align-self-center">
-            <a href="{{ route('home') }}" style="background-img: #FEFAE0;"><img src="{{ asset('img/logo.jpg') }}" alt="logo" width="400px" class="mx-auto d-block"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="logo" width="400px" class="mx-auto d-block"></a>
         </div>
 
-        <div class="col" style="background-color: #FEFAE0;"></div>
+
         <br>
         <!--MENU DE NAVEGACION-->
         <div>
@@ -57,7 +56,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <!--<a class="nav-link" id="boton" href="{{ route('otros-contenidos') }}">OTROS CONTENIDOS</a>-->
+                    <a class="nav-link" id="boton" href="{{ route('otros-contenidos') }}">OTROS CONTENIDOS</a>
                 </li>
 
                 <li class="nav-item">
@@ -119,20 +118,19 @@
 
 </footer>
 </div>
-
-</body>
-
 <!--Scripts-->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
+
+</body>
 
 </html>

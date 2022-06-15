@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-    //Sidenav en móviles
-    //$('.sidenav').sidenav();
-
     //Mensajes
     var input_tipo = $("input[name=tipo-mensaje]");
     var input_texto = $("input[name=texto-mensaje]");

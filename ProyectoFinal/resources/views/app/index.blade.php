@@ -17,11 +17,11 @@
             <p style="text-align: center;" class="nos">RUTAS RECOMENDADAS</p>
 
             <div style="text-align: center;" >
-
-                <a href="{{ url('ruta/puerto de la fuenfría') }}"><button type="button" class="btn btn-lg" id="boton">PENSAR</button></a>
-                <a href="{{ url('ruta/Puerto de la Fuenfría') }}"><button type="button" class="btn btn-lg" id="boton">PENSAR</button></a>
-                <a href="{{ url('ruta/Puerto de la Fuenfría') }}"><button type="button" class="btn btn-lg" id="boton">PENSAR</button></a>
-
+                @foreach ($rowset as $row)
+                <a href="{{ url('ruta/puerto-de-la-fuenfria') }}"><button type="button" class="btn btn-lg" id="boton">Fuenfría</button></a>
+                <a href="{{ url('ruta/7-picos') }}"><button type="button" class="btn btn-lg" id="boton">7 Picos</button></a>
+                <a href="{{ url('ruta/laguna-de-gredos') }}"><button type="button" class="btn btn-lg" id="boton">Gredos</button></a>
+                @endforeach
             </div>
 
         </div>
@@ -51,12 +51,21 @@
             <button type="button" class="btn btn-lg" id="boton">GALERIA</button>
 
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
                 <div class="carousel-inner">
-                @foreach ($rowset as $row)
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="{{ asset('img/'.$row->imagen) }}" width="300px" alt="{{ $row->nombre }}">
-                        </div>
-                @endforeach
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{ asset('img/fuenfria.jpeg') }}" alt="fuenfria">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/laguna-gredos.jpeg') }}" alt="laguna-gredos">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('img/camino-schmidt.jpg') }}" alt="camino-schmidt">
+                    </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
